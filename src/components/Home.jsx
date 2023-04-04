@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import Results from "./Results";
 function Home() {
   const [movies, setMovies] = useState([]);
   const [searchParams] = useSearchParams();
@@ -18,22 +19,14 @@ function Home() {
       );
 
       const data = await res.json();
-      console.log(data);
       setMovies(data.results);
     };
     getMovies();
   }, []);
 
   return (
-    <div className="max-w-3xl mx-auto space-y-4 p-4">
-      {movies.map((movie) => (
-        <div key={movie.id}>
-          <h3 className="text-2xl font-medium text-amber-600">
-            {movie.id} - {movie.title}
-          </h3>
-          <p>{movie.overview}</p>
-        </div>
-      ))}
+    <div>
+      <Results movies={movies} />
     </div>
   );
 }

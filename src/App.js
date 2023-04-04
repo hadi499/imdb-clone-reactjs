@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import TopRated from "./components/TopRated";
+import MovieDetail from "./components/MovieDetail";
 
 function App() {
   const { theme } = useTheme();
@@ -20,7 +20,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/top-rated" element={<TopRated />} /> */}
+          <Route path="movie/:id" element={<MovieDetail />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
