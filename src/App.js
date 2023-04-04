@@ -4,11 +4,13 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import TopRated from "./components/TopRated";
 
 function App() {
   const { theme } = useTheme();
   const bgColor = theme === "dark" ? "bg-gray-700" : "bg-white";
   const textColor = theme === "dark" ? "text-gray-200" : "text-gray-700";
+
   return (
     <Router>
       <div
@@ -18,6 +20,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          {/* <Route path="/top-rated" element={<TopRated />} /> */}
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
